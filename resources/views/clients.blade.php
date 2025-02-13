@@ -22,6 +22,11 @@
                             <p><b>Client ID : </b>{{$client->id}}</p>
                             <p><b>Client Redirect : </b>{{$client->redirect}}</p>
                             <p><b>Client Secret : </b>{{$client->secret}}</p>
+                            <form method="POST" action="/delete/{{$client->id}}">
+                                @csrf
+                                @method('delete')
+                               <button type="submit">Supprimer</button>
+                            </form>
                         </div>
                     @endforeach
                 </div>

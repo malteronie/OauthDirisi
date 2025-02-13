@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SocialiteAuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -39,3 +40,4 @@ Route::any('logout', function (){
     
 })->name(name:'logout');
 
+Route::delete('/delete/{id}',[ SocialiteAuthController::class, 'destroyClient']);
